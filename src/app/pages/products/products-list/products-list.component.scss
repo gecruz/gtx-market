@@ -1,0 +1,21 @@
+.card {
+  margin: 16px;
+  max-width: 400px;
+  height: fit-content;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card-actions-container {
+  text-align: end;
+}
+
+.product-image {
+  margin: 16px auto;
+  max-width: 250px;
+}
