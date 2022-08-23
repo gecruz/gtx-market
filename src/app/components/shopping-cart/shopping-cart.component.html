@@ -1,5 +1,5 @@
 <button *ngIf="showCart" routerLink="/checkout" class="shopping-cart-button" mat-fab color="accent"
-  aria-label="Open shopping cart">
+  aria-label="Open shopping cart" data-cy="shopping-cart-button">
   <span [matBadge]="shoppingCartStore.shoppingCartProducts.length" matBadgeOverlap="false" matBadgePosition="above">
     <mat-icon>shopping_cart</mat-icon>
   </span>
