@@ -1,15 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { SharedModule } from './shared/shared.module';
+
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        SharedModule,
+        RouterTestingModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        NavbarComponent,
+        ShoppingCartComponent,
       ],
     }).compileComponents();
   });
@@ -20,16 +28,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'gtx-market'`, () => {
+  it(`should have as title 'GTX Market'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('gtx-market');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('gtx-market app is running!');
+    expect(app.title).toEqual('GTX Market');
   });
 });
