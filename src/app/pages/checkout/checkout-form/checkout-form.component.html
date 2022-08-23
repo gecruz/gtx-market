@@ -1,0 +1,35 @@
+<mat-list>
+  <div mat-subheader>Products:</div>
+  <mat-list-item *ngFor="let product of shoppingCartStore.shoppingCartProducts$ | async; trackBy: shouldUpdateCart">
+    <button class="delete-icon" mat-list-icon mat-icon-button matTooltip="Remove item from Shopping Cart"
+      aria-label="Remove item from Shopping Cart" (click)="shoppingCartStore.deleteProduct(product.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <div mat-line>
+      {{product.name}} - {{product.price | currency}}
+    </div>
+    <div mat-line>
+      Price: {{product.price | currency}}
+    </div>
+    <div mat-line>
+      Total: {{product.total | currency}}
+    </div>
+    <div mat-line *ngIf="product.promotion">
+      Promotion: {{product.promotion}}
+    </div>
+    <button mat-icon-button aria-label="Decrease quantity" (click)="shoppingCartStore.removeProduct(product.id)"
+      [disabled]="product.quantity <= 1">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <span>
+      {{product.quantity}}
+    </span>
+    <button mat-icon-button aria-label="Increase quantity" (click)="shoppingCartStore.addProduct(product)">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <div mat-subheader>
+    Total: {{calculate(shoppingCartStore.shoppingCartProducts) | currency}}
+  </div>
+</mat-list>
