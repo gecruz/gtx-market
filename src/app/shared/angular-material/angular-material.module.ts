@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
@@ -26,6 +27,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatToolbarModule,
     MatSidenavModule,
     MatTooltipModule,
+    MatSnackBarModule,
     MatExpansionModule,
     MatFormFieldModule,
   ],
@@ -39,8 +41,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatToolbarModule,
     MatSidenavModule,
     MatTooltipModule,
+    MatSnackBarModule,
     MatExpansionModule,
     MatFormFieldModule,
   ]
 })
+
 export class AngularMaterialModule { }
